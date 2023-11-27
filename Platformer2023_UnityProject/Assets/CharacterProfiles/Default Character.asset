@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61a2c8073ac47640b733c1ddc4bc096, type: 3}
   m_Name: Default Character
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   gravity: -9.81
   jumpStrength: 10
   numberOfJumps: 2

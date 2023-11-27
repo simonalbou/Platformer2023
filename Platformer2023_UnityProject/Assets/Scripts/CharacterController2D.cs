@@ -12,10 +12,11 @@ public class CharacterController2D : MonoBehaviour
     public CharacterProfile characterProfile;
     public Transform selfTransform;
     public Raycaster2D raycaster;
+    public Animator animator;
     public UnityEvent onBecameGrounded;
 
     // private variables
-    Vector2 inputVector;
+    Vector2 inputVector, movementVector;
     bool isJumping;
     float timeSinceJumped;
     int remainingJumps;
@@ -61,6 +62,7 @@ public class CharacterController2D : MonoBehaviour
         // jump
         if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0)
         {
+            animator.SetTrigger("_Jump");
             timeSinceJumped = 0;
             isJumping = true;
             remainingJumps--;
@@ -69,7 +71,6 @@ public class CharacterController2D : MonoBehaviour
 
     void UpdateMovement()
     {
-        Vector2 movementVector = Vector2.zero;
         movementVector.x = CalculateHorizontalMovement();
         movementVector.y = CalculateVerticalMovement();
         Move(movementVector * Time.deltaTime);
@@ -122,6 +123,9 @@ public class CharacterController2D : MonoBehaviour
                 selfTransform.localScale.z
             );
         }
+
+        animator.SetFloat("_Speed", Mathf.Abs(movementVector.x));
+        animator.SetBool("_Grounded", raycaster.collisionFlags.below);
     }
 
     void Move(Vector2 direction)

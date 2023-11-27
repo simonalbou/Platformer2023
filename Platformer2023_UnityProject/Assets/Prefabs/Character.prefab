@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 881665678869294410}
   - component: {fileID: 6200491456348258020}
   - component: {fileID: 3376431975335560274}
+  - component: {fileID: 4361690094573308026}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.32507938, y: 0.32}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,6 +149,7 @@ MonoBehaviour:
   characterProfile: {fileID: 11400000, guid: fd74e451edce8194aa0bb210c2ecda36, type: 2}
   selfTransform: {fileID: 1980807439620873547}
   raycaster: {fileID: 3376431975335560274}
+  animator: {fileID: 4361690094573308026}
   onBecameGrounded:
     m_PersistentCalls:
       m_Calls:
@@ -188,6 +190,27 @@ MonoBehaviour:
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &4361690094573308026
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99098231841968798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 986bd8e197d56e2478ed89795eb1b95f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2308809099596091167
 GameObject:
   m_ObjectHideFlags: 0
