@@ -145,43 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddaea714018efd04b8db53bb02e2b159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  gravity: -9.81
-  jumpStrength: 100
-  numberOfJumps: 2
-  jumpCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.00376422
-      value: -2.0472603
-      inSlope: -0.062722266
-      outSlope: -0.062722266
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.14185905
-    - serializedVersion: 3
-      time: 0.21464224
-      value: -0.083437875
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.49039596
-      value: 1.0324801
-      inSlope: 0.13220608
-      outSlope: 0.13220608
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.16092671
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  characterProfile: {fileID: 11400000, guid: fd74e451edce8194aa0bb210c2ecda36, type: 2}
   selfTransform: {fileID: 1980807439620873547}
   raycaster: {fileID: 3376431975335560274}
   onBecameGrounded:

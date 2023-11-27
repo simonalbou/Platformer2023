@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Character Profile", menuName = "Custom/Character Profile", order = 100)]
 public class CharacterProfile : ScriptableObject
 {
     // valeurs à équilibrer
@@ -12,5 +13,5 @@ public class CharacterProfile : ScriptableObject
     [Tooltip("Used for double-jumps, triple-jumps, or more.")]
     public int numberOfJumps = 2;
     [Tooltip("Acts as a gravity multiplier during jump.")]
-    public AnimationCurve jumpCurve;
+    public AnimationCurve jumpCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 }

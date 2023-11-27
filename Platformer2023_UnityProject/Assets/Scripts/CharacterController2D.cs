@@ -7,22 +7,11 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-    // valeurs à équilibrer
-    [Header("Parameters")]
-    public float speed = 5;
-    public float gravity = -9.81f;
-    public float jumpStrength = 10;
-    [Tooltip("Used for double-jumps, triple-jumps, or more.")]
-    public int numberOfJumps = 2;
-    [Tooltip("Acts as a gravity multiplier during jump.")]
-    public AnimationCurve jumpCurve;
-
     // références de components
     [Header("References")]
+    public CharacterProfile characterProfile;
     public Transform selfTransform;
     public Raycaster2D raycaster;
-    public CharacterProfile characterControllerData;
-
     public UnityEvent onBecameGrounded;
 
     // private variables
@@ -44,6 +33,13 @@ public class CharacterController2D : MonoBehaviour
         UpdateGraphics();
     }
 
+    public void LoadNewProfile(CharacterProfile newProfile)
+    {
+        characterProfile = newProfile;
+        // call events, feedbacks, etc.
+        // readjust private variables
+    }
+
     void OnRaycasterDetectedObstacle(RayDirection dir)
     {
         if (dir == RayDirection.Below)
@@ -54,7 +50,7 @@ public class CharacterController2D : MonoBehaviour
 
     public void ResetAllowedJumps()
     {
-        remainingJumps = numberOfJumps;
+        remainingJumps = characterProfile.numberOfJumps;
     }
 
     void ListenToInputs()
@@ -81,7 +77,7 @@ public class CharacterController2D : MonoBehaviour
 
     float CalculateHorizontalMovement()
     {
-        return inputVector.x * speed;
+        return inputVector.x * characterProfile.speed;
     }
 
     // calcule l'intensité de la gravité en fonction du saut
@@ -92,23 +88,23 @@ public class CharacterController2D : MonoBehaviour
             timeSinceJumped += Time.deltaTime;
 
             // vérifier si on a fini le saut (fin de la courbe) ou pas encore
-            if (timeSinceJumped >= jumpCurve.keys[jumpCurve.keys.Length-1].time)
+            if (timeSinceJumped >= characterProfile.jumpCurve.keys[characterProfile.jumpCurve.keys.Length-1].time)
             {
                 isJumping = false;
             }
 
-            return gravity * jumpCurve.Evaluate(timeSinceJumped);
+            return characterProfile.gravity * characterProfile.jumpCurve.Evaluate(timeSinceJumped);
 
             // méthode alternative : pour une courbe qui dessine la trajectoire du saut
             /**
-            float altitudeThisFrame = jumpCurve.Evaluate(timeSinceJumped);
-            float altitudePreviousFrame = jumpCurve.Evaluate(timeSinceJumped - Time.deltaTime);
-            return (altitudeThisFrame - altitudePreviousFrame) * jumpStrength;
+            float altitudeThisFrame = characterProfile.jumpCurve.Evaluate(timeSinceJumped);
+            float altitudePreviousFrame = characterProfile.jumpCurve.Evaluate(timeSinceJumped - Time.deltaTime);
+            return (altitudeThisFrame - altitudePreviousFrame) * characterProfile.jumpStrength;
             /**/
         }
 
         // else : le joueur n'est pas en train de sauter (on applique donc la gravité simple)
-        return gravity;
+        return characterProfile.gravity;
     }
 
     void UpdateGraphics()
