@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 536877885
+    locked: 0
+  - name: Middle Layer
+    uniqueID: 1789461681
+    locked: 0
+  - name: Foreground
+    uniqueID: 3679916901
+    locked: 0
+  - name: VFX
+    uniqueID: 1126841943
+    locked: 0
+  - name: UI
+    uniqueID: 1888709761
+    locked: 0
