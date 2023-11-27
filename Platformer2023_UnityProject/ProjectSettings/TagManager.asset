@@ -44,6 +44,15 @@ TagManager:
   - name: Background
     uniqueID: 536877885
     locked: 0
+  - name: Ground
+    uniqueID: 2565709731
+    locked: 0
+  - name: Shadows
+    uniqueID: 110138851
+    locked: 0
+  - name: GroundedObjects
+    uniqueID: 434570849
+    locked: 0
   - name: Middle Layer
     uniqueID: 1789461681
     locked: 0
