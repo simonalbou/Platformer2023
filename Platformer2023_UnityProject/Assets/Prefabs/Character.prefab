@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6200491456348258020}
   - component: {fileID: 3376431975335560274}
   - component: {fileID: 4361690094573308026}
+  - component: {fileID: 5342736523335408933}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -165,6 +166,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onGotHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3376431975335560274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +215,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &5342736523335408933
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99098231841968798}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2308809099596091167
 GameObject:
   m_ObjectHideFlags: 0

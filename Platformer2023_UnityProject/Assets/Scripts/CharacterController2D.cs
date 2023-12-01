@@ -14,6 +14,7 @@ public class CharacterController2D : MonoBehaviour
     public Raycaster2D raycaster;
     public Animator animator;
     public UnityEvent onBecameGrounded;
+    public UnityEvent<float> onGotHit;
 
     // private variables
     Vector2 inputVector, movementVector;
